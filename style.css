@@ -3,7 +3,52 @@
     margin: 0;
 }
 
+/* body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  } */
+  .rotate-shadows {
+    width: 220px;
+    height: 220px;
+    position: relative;
+    top: 30px;
+  }
+  .rotate-shadows:after,
+  .rotate-shadows:before {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+  }
+  .rotate-shadows:before {
+    box-shadow: inset 0 20px 0 rgba(0, 250, 250, 0.6), inset 20px 0 0 rgba(0, 200, 200, 0.6), inset 0 -20px 0 rgba(0, 150, 200, 0.6), inset -20px 0 0 rgba(0, 200, 250, 0.6);
+    animation: rotate-before 2s -0.5s linear infinite;
+  }
+  .rotate-shadows:after {
+    box-shadow: inset 0 20px 0 rgba(250, 250, 0, 0.6), inset 20px 0 0 rgba(250, 200, 0, 0.6), inset 0 -20px 0 rgba(250, 150, 0, 0.6), inset -20px 0 0 rgba(250, 100, 0, 0.6);
+    animation: rotate-after 2s -0.5s linear infinite;
+  }
+  @keyframes rotate-after {
+    0% {transform: rotateZ(0deg) scaleX(1) scaleY(1);}
+    50% {transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);}
+    100% {transform: rotateZ(360deg) scaleX(1) scaleY(1);}
+  }
+  @keyframes rotate-before {
+    0% {transform: rotateZ(0deg) scaleX(1) scaleY(1);}
+    50% {transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);}
+    100% {transform: rotateZ(-360deg) scaleX(1) scaleY(1);}
+  }
+
 .top-part {
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 300px;
     background: rgb(0,54,3);
@@ -11,6 +56,7 @@
 }
 
 .about-me {
+    box-shadow: 0 510px 6px 520px black;
     background-image: url(./4343er7i68tgy.jpg);
     background-repeat: no-repeat;
     width: 100%;
@@ -30,7 +76,7 @@
 
 .about-me-text::before {
     position: relative;
-    right: 150%;
+    right: 143%;
     bottom: 60px;
     content: "";
     display: block;
@@ -89,10 +135,15 @@ border-image: 10 repeating-linear-gradient(45deg, #A7CECC, #A7CECC 10px, transpa
     font-size: 40px;
 }
 
+.about-me-text::before {
+    margin: 0 auto;
+}
+
 .quote-text {
     top: 20px;
-    padding-top: 40px;
-    height: 230px;
+    padding: 10px;
+    padding-top: 45px;
+    height: 224px;
     font-size: 25px;
     clip-path: polygon(0% 0%, 25% 18%, 49% 0%, 69% 18%, 100% 0%, 100% 100%, 79% 81%, 53% 100%, 26% 85%, 0% 99%);
 }
